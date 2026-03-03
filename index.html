@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverie – Launching Soon</title>
+<link rel="icon" href="logo1.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(94deg,rgba(255, 255, 255, 1) 0%, rgba(203, 189, 255, 1) 100%, rgba(80, 0, 120, 1) 100%);
+    height:100vh;
+}
+
+.wrapper{
+    display:flex;
+    height:100vh;
+}
+
+/* LEFT SIDE */
+.left{
+    width:55%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px;
+}
+
+.logo img{
+    width:160px;
+    margin-bottom:25px;
+}
+
+/* Headline */
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:48px;
+    font-weight:600;
+    margin-bottom:20px;
+    line-height:1.2;
+    color:#2C2C2C;
+}
+
+.subtitle{
+    font-size:16px;
+    color:#7A7A7A;
+    margin-bottom:35px;
+    max-width:400px;
+}
+
+/* Countdown */
+.countdown{
+    display:flex;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.time-box{
+    background:white;
+    padding:15px 18px;
+    text-align:center;
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    color:#2C2C2C;
+}
+
+.time-box h3{
+    font-size:22px;
+    font-weight:500;
+}
+
+.time-box span{
+    font-size:11px;
+    letter-spacing:1px;
+    color:#7A7A7A;
+}
+
+/* Newsletter */
+.newsletter p{
+    font-size:14px;
+    margin-bottom:10px;
+    color:#949494;
+}
+
+.newsletter form{
+    display:flex;
+    max-width:420px;
+}
+
+.newsletter input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ff832a;
+    border-right:none;
+    border-radius:4px 0 0 4px;
+    outline:none;
+    font-size:14px;
+}
+
+.newsletter button{
+    padding:12px 18px;
+    border:none;
+    background:#ff8229;
+    color:white;
+    font-size:13px;
+    letter-spacing:1px;
+    cursor:pointer;
+    border-radius:0 4px 4px 0;
+    transition:0.3s;
+}
+
+.newsletter button:hover{
+    background:#ff7614;
+}
+
+/* Social */
+.social{
+    margin-top:35px;
+}
+
+.social a{
+    margin-right:15px;
+    color:#3f3f3f;
+    font-size:16px;
+    transition:color 0.3s ease;
+}
+
+.social a:hover{
+    color:#ff8936;
+}
+
+/* RIGHT SIDE */
+.right{
+    width:45%;
+    background:url('bg.jpg') no-repeat center center/cover;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .wrapper{
+        flex-direction:column;
+    }
+    .left, .right{
+        width:100%;
+    }
+    .right{
+        height:40vh;
+    }
+    .left{
+        padding:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="left">
+        
+        <div class="logo">
+            <img src="logo.png" alt="Reverie Logo">
+        </div>
+
+        <h1>We are launching soon.</h1>
+
+        <div class="subtitle">
+            Reverie is curating a new standard of modern living — timeless design, functional elegance, and thoughtful simplicity.
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown">
+            <div class="time-box">
+                <h3 id="days">00</h3>
+                <span>DAYS</span>
+            </div>
+            <div class="time-box">
+                <h3 id="hours">00</h3>
+                <span>HOURS</span>
+            </div>
+            <div class="time-box">
+                <h3 id="minutes">00</h3>
+                <span>MINUTES</span>
+            </div>
+            <div class="time-box">
+                <h3 id="seconds">00</h3>
+                <span>SECONDS</span>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <p>Join the Reverie Circle and be the first to experience our launch.</p>
+            
+            <form action="https://formsubmit.co/reverie.official.shop@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">JOIN WAITLIST</button>
+            </form>
+        </div>
+
+        <!-- Social -->
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61586784458949" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/reverie.official.shop/" target="_blank"><i class="fab fa-instagram"></i></a>
+          
+        </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="right"></div>
+
+</div>
+
+<script>
+// Set launch date here
+var launchDate = new Date("March 10, 2026 00:00:00").getTime();
+
+setInterval(function(){
+    var now = new Date().getTime();
+    var distance = launchDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+</script>
+
+</body>
+</html>

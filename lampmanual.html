@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverie MultiPlug Lamp - User Manual</title>
+<link rel="icon" href="logo1.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  background:linear-gradient(94deg, rgba(255, 255, 255, 1) 0%, rgb(228, 221, 255) 100%, rgb(59, 0, 196) 100%);
+  color:#2C2C2C;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Wrapper for split layout */
+.wrapper{
+  display:flex;
+  flex-wrap: wrap;
+  min-height:100vh;
+  position:relative;
+}
+
+/* LEFT SIDE */
+.left{
+  flex:1;
+  padding:60px 50px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  position:relative;
+  overflow:hidden;
+  border-top-right-radius:50px;
+  border-bottom-right-radius:50px;
+  box-shadow: 8px 0 50px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(240,230,255,0.8) 100%);
+  backdrop-filter: blur(12px);
+}
+
+/* Floating light blobs */
+.left::before, .left::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter: blur(120px);
+  opacity:0.5;
+  z-index:0;
+}
+
+.left::before{
+  width:300px;
+  height:300px;
+  background: #3c94f9;
+  top:-80px;
+  left:-80px;
+}
+
+.left::after{
+  width:200px;
+  height:200px;
+  background: #8A2BE2;
+  bottom:-60px;
+  right:-60px;
+}
+
+/* Logo */
+.left .logo img{
+  width:160px;
+  margin-bottom:30px;
+  z-index:1;
+  position:relative;
+}
+
+/* Headings */
+.left h1{
+  font-family:'Playfair Display', serif;
+  font-size:46px;
+  font-weight:600;
+  margin-bottom:12px;
+  color:#2C2C2C;
+  letter-spacing:1px;
+  z-index:1;
+  position:relative;
+}
+
+.left h2{
+  font-family:'Playfair Display', serif;
+  font-size:24px;
+  color:#D2691E;
+  font-weight:500;
+  margin-bottom:30px;
+  z-index:1;
+  position:relative;
+}
+
+/* Description box */
+.description{
+  font-size:16px;
+  color:#444;
+  line-height:1.8;
+  margin-bottom:45px;
+  max-width:520px;
+  background: rgba(255,255,255,0.95);
+  padding:30px 35px;
+  border-radius:25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  position:relative;
+  z-index:1;
+}
+
+/* Features */
+.features{
+  display:flex;
+  flex-wrap: wrap;
+  gap:20px;
+  z-index:1;
+  position:relative;
+}
+
+.feature-box{
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+  width:200px;
+  text-align:center;
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+  position:relative;
+}
+
+.feature-box:hover{
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #f0e0ff, #fff0e0);
+}
+
+.feature-box h3{
+  font-family:'Playfair Display', serif;
+  font-size:19px;
+  margin-bottom:8px;
+  color:#2C2C2C;
+}
+
+.feature-box p{
+  font-size:14px;
+  color:#777;
+  line-height:1.5;
+}
+
+/* RIGHT SIDE: Video */
+.right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 60px 40px;
+}
+
+.video-container{
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:20px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .wrapper{
+    flex-direction: column;
+  }
+  .left, .right{
+    padding:40px 20px;
+    border-radius:0;
+  }
+  .features{
+    justify-content:center;
+  }
+  .description{
+    max-width:100%;
+  }
+}
+
+.home-button{
+  display: inline-block;
+  margin-top:35px;
+  padding:14px 28px;
+  background: linear-gradient(135deg, #1e99d2, #8A2BE2);
+  color:white;
+  font-weight:500;
+  font-size:16px;
+  text-decoration:none;
+  border-radius:25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  z-index:1;
+  position:relative;
+}
+
+.home-button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+  opacity:0.95;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- LEFT SIDE: Description & Features -->
+<!-- LEFT SIDE: Description & Features -->
+<div class="left">
+  <div class="logo">
+    <img src="logo.png" alt="Reverie Logo">
+  </div>
+
+  <h1>Reverie MultiPlug Lamp</h1>
+  <h2>User Manual & Features</h2>
+
+  <div class="description">
+    The Reverie MultiPlug Lamp combines <strong>functional elegance</strong> with modern convenience.  
+    Featuring <strong>2 USB ports</strong>, <strong>2 power ports</strong>, and a table lamp with <strong>3 selectable light modes</strong> — Warm, Cold, and Mix.  
+    Designed for your bedside or workspace, it organizes, illuminates, and elevates your environment with timeless style.
+  </div>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>2 USB Ports</h3>
+      <p>Charge your devices effortlessly while keeping your space organized.</p>
+    </div>
+    <div class="feature-box">
+      <h3>2 Power Ports</h3>
+      <p>Connect essential electronics with ease without cluttering your desk.</p>
+    </div>
+    <div class="feature-box">
+      <h3>3 Light Modes</h3>
+      <p>Choose Warm, Cold, or Mix to suit your mood and environment.</p>
+    </div>
+  </div>
+
+  <!-- Back to Home Button -->
+  <a href="index.html" class="home-button">← Back to Home</a>
+</div>
+
+  <!-- RIGHT SIDE: Video -->
+  <div class="right">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="lampmanual.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
